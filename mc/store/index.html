@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>服务器商店</title>
+<style>
+    body {
+        background: #f7f7f7;
+        font-family: "微软雅黑", "Microsoft YaHei", Arial, sans-serif;
+    }
+    .shop-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        margin: 40px auto;
+        max-width: 1200px;
+    }
+    .shop-item {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        width: 180px;
+        min-height: 260px;
+        margin: 0;
+        padding: 18px 14px 16px 14px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: box-shadow 0.2s;
+    }
+    .shop-item:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .shop-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 18px;
+        margin-top: 6px;
+        background: #f2f2f2;
+        border-radius: 8px;
+        display: block;
+    }
+    .shop-desc {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 12px;
+        text-align: center;
+        min-height: 2.5em;
+    }
+    .shop-buy {
+        display: none;
+        color: #e53935;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-top: 6px;
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+    }
+    .shop-item:hover .shop-buy {
+        display: block;
+    }
+</style>
+<script>
+    function buy(desc) {
+        window.location.href = `mailto:2701262643@qq.com?subject=购买物品&body=我想买${desc}`;
+    }
+</script>
+</head>
+<body>
+    <div class="shop-container">
+        <div class="shop-item">
+            <img src="Apple.gif" alt="附魔金苹果">
+            <div class="shop-desc">附魔金苹果x64/￥10</div>
+            <div class="shop-buy" onclick="buy('附魔金苹果x64/￥10')">立即购买</div>
+        </div>
+        <div class="shop-item">
+            <img src="Diamond.png" alt="钻石">
+            <div class="shop-desc">钻石x64/￥5</div>
+            <div class="shop-buy" onclick="buy('钻石x64/￥5')">立即购买</div>
+        </div>
+        <div class="shop-item">
+            <img src="Netherite_Ingot.png" alt="下界合金锭">
+            <div class="shop-desc">下界合金锭x10/￥15</div>
+            <div class="shop-buy" onclick="buy('下界合金锭x10/￥15')">立即购买</div>
+        </div>
+        <!-- 可继续添加更多商品，复制.shop-item块即可 -->
+    </div>
+</body>
+</html>
